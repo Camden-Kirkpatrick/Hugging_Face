@@ -1,3 +1,16 @@
+"""
+Explore the IMDB movie-review dataset from the Hugging Face Hub.
+
+Loads "stanfordnlp/imdb" (50k reviews labeled for sentiment) and inspects it two ways:
+  1. Full DatasetDict  -> load_dataset("stanfordnlp/imdb")
+     Gives all splits (train / test / unsupervised); access rows via dataset["train"][i].
+  2. Single split       -> load_dataset("stanfordnlp/imdb", split="train")
+     Returns just the train split, so no ["train"] indexing is needed.
+
+Each example is {"text": <review>, "label": <int>}, where label 1 = positive,
+0 = negative, and -1 = unlabeled (the "unsupervised" split).
+"""
+
 from datasets import load_dataset
 
 # Movie reviews dataset
