@@ -19,6 +19,8 @@ out = client.chat_completion(
     messages,
     model="meta-llama/Llama-3.1-8B-Instruct",
     max_tokens=250,
+    n=2,
 )
 
-print(out.choices[0].message.content)
+for choice in out.choices:
+    print(choice.message.content, end="\n\n")
