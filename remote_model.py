@@ -19,7 +19,7 @@ out = client.chat_completion(
     messages,
     model="meta-llama/Llama-3.1-8B-Instruct",
     max_tokens=250,
-    n=2,
+    n=2, # Generate 2 responses
 )
 
 for choice in out.choices:
