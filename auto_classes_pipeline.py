@@ -19,7 +19,12 @@ model = AutoModelForSequenceClassification.from_pretrained(MODEL)
 tokenizer = AutoTokenizer.from_pretrained(MODEL)
 
 # Build the pipeline from them
-classifier = pipeline("sentiment-analysis", model=model, tokenizer=tokenizer)
+classifier = pipeline(
+    "sentiment-analysis",
+    model=model,
+    tokenizer=tokenizer,
+    device=0,
+)
 
 text = "This movie was fantastic!"
 

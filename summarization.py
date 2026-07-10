@@ -10,7 +10,11 @@ Requires transformers < v5  (the `summarization` pipeline task was removed in v5
 
 from transformers import pipeline
 
-pipe = pipeline("summarization", model="facebook/bart-large-cnn")
+pipe = pipeline(
+    "summarization",
+    model="facebook/bart-large-cnn",
+    device=0,
+)
 
 text  = """
 The mechanical clock, invented in medieval Europe, did more than

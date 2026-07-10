@@ -14,7 +14,11 @@
 
 from transformers import pipeline
 
-pipe = pipeline("text-generation", model="Qwen/Qwen2.5-0.5B-Instruct")
+pipe = pipeline(
+    "text-generation",
+    model="Qwen/Qwen2.5-0.5B-Instruct",
+    device=0
+)
 
 messages = [
     {"role": "system", "content": "You are a geography expert who answers questions in detail. Every response should start with 'Fact:', followed by a newline"},
